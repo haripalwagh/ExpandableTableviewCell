@@ -12,8 +12,6 @@
 <UITableViewDataSource,
 UITableViewDelegate>
 {
-    UITableView *tblView;
-    
     NSArray *cell0SubMenuItemsArray;
     
     BOOL isSection0Cell0Expanded;
@@ -23,21 +21,13 @@ UITableViewDelegate>
 
 @implementation ViewController
 
+@synthesize tblView;
+
 # pragma mark - View Life Cycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    
-    tblView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    tblView.backgroundColor = [UIColor clearColor];
-    tblView.delegate = self;
-    tblView.dataSource = self;
-    tblView.allowsSelection = YES;
-    tblView.scrollEnabled = YES;
-    tblView.alwaysBounceVertical = YES;
-    [self.view addSubview:tblView];
+    [super viewDidLoad]; 
     
     cell0SubMenuItemsArray = @[@"First Static Menu Item", @"Second Static Menu Item", @"Third Static Menu Item"];
 }
@@ -52,13 +42,6 @@ UITableViewDelegate>
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    [self updateViewDimensions];
-}
-
-- (void)updateViewDimensions
-{
-    tblView.frame = CGRectMake(0, 40, 320, 550);
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,6 +74,7 @@ UITableViewDelegate>
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:strCellId];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     if (indexPath.section == 0)
     {
@@ -98,7 +82,7 @@ UITableViewDelegate>
         {
             cell.textLabel.text = @"Expandable Cell";
             
-            UIImageView *accessoryImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            UIImageView *accessoryImageView = [[UIImageView alloc] initWithFrame:CGRectMake(cell.frame.size.width - 30, cell.frame.size.height / 2 - 15, 30, 30)];
             
             if (isSection0Cell0Expanded) // Set accessory view according to cell state - EXPANDED / NOT EXPANDED
             {
@@ -111,7 +95,7 @@ UITableViewDelegate>
                 cell.detailTextLabel.text = @"Status : Not Expanded";
             }
             
-            cell.accessoryView = accessoryImageView;
+            [cell addSubview:accessoryImageView];
         }
         else
         {
@@ -141,7 +125,29 @@ UITableViewDelegate>
         // Change status of a cell reload table
         
         isSection0Cell0Expanded = !isSection0Cell0Expanded;
-        [tblView reloadData];
+        
+        if (isSection0Cell0Expanded)
+        {
+            NSArray *cells = [NSArray arrayWithObjects:
+                              [NSIndexPath indexPathForRow:1 inSection:0],
+                              [NSIndexPath indexPathForRow:2 inSection:0],
+                              [NSIndexPath indexPathForRow:3 inSection:0],
+                              nil];
+            [tblView beginUpdates];
+            [tblView insertRowsAtIndexPaths:cells withRowAnimation:UITableViewRowAnimationFade];
+            [tblView endUpdates];
+        }
+        else
+        {
+            NSArray *cells = [NSArray arrayWithObjects:
+                              [NSIndexPath indexPathForRow:1 inSection:0],
+                              [NSIndexPath indexPathForRow:2 inSection:0],
+                              [NSIndexPath indexPathForRow:3 inSection:0],
+                              nil];
+            [tblView beginUpdates];
+            [tblView deleteRowsAtIndexPaths:cells withRowAnimation:UITableViewRowAnimationFade];
+            [tblView endUpdates];
+        }
     }
 }
 
