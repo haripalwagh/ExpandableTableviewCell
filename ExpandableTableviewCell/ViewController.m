@@ -133,9 +133,19 @@ UITableViewDelegate>
                               [NSIndexPath indexPathForRow:2 inSection:0],
                               [NSIndexPath indexPathForRow:3 inSection:0],
                               nil];
+            
+            [CATransaction begin];
+            
+            [CATransaction setCompletionBlock:^{
+                [tblView reloadData];
+            }];
+            
             [tblView beginUpdates];
             [tblView insertRowsAtIndexPaths:cells withRowAnimation:UITableViewRowAnimationFade];
             [tblView endUpdates];
+            
+            [CATransaction commit];
+            
         }
         else
         {
@@ -144,9 +154,18 @@ UITableViewDelegate>
                               [NSIndexPath indexPathForRow:2 inSection:0],
                               [NSIndexPath indexPathForRow:3 inSection:0],
                               nil];
+            
+            [CATransaction begin];
+            
+            [CATransaction setCompletionBlock:^{
+                [tblView reloadData];
+            }];
+            
             [tblView beginUpdates];
             [tblView deleteRowsAtIndexPaths:cells withRowAnimation:UITableViewRowAnimationFade];
             [tblView endUpdates];
+            
+            [CATransaction commit];
         }
     }
 }

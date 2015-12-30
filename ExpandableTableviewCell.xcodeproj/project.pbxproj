@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7FF0753F1B68A366006A40C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0753E1B68A366006A40C6 /* main.m */; };
-		7FF075451B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF075431B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodeld */; };
 		7FF0754D1B68A366006A40C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0754C1B68A366006A40C6 /* Images.xcassets */; };
 		7FF075501B68A366006A40C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0754E1B68A366006A40C6 /* LaunchScreen.xib */; };
-		7FF0755C1B68A366006A40C6 /* ExpandableTableviewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0755B1B68A366006A40C6 /* ExpandableTableviewCellTests.m */; };
 		7FF0756C1B68A37D006A40C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF075661B68A37D006A40C6 /* AppDelegate.m */; };
 		7FF0756D1B68A37D006A40C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF075681B68A37D006A40C6 /* ViewController.m */; };
 		7FF0756E1B68A37D006A40C6 /* Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF075691B68A37D006A40C6 /* Plus.png */; };
@@ -19,26 +17,12 @@
 		7FF075701B68A37D006A40C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0756B1B68A37D006A40C6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7FF075561B68A366006A40C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FF075311B68A366006A40C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7FF075381B68A366006A40C6;
-			remoteInfo = ExpandableTableviewCell;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		7FF075391B68A366006A40C6 /* ExpandableTableviewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableTableviewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF0753D1B68A366006A40C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FF0753E1B68A366006A40C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7FF075441B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpandableTableviewCell.xcdatamodel; sourceTree = "<group>"; };
 		7FF0754C1B68A366006A40C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7FF0754F1B68A366006A40C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		7FF075551B68A366006A40C6 /* ExpandableTableviewCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpandableTableviewCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FF0755A1B68A366006A40C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FF0755B1B68A366006A40C6 /* ExpandableTableviewCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpandableTableviewCellTests.m; sourceTree = "<group>"; };
 		7FF075651B68A37D006A40C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7FF075661B68A37D006A40C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7FF075671B68A37D006A40C6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -56,21 +40,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FF075521B68A366006A40C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FF04A181C33FB520076A095 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7FF075691B68A37D006A40C6 /* Plus.png */,
+				7FF0756A1B68A37D006A40C6 /* Minus.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		7FF04A191C33FB7F0076A095 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7FF0756B1B68A37D006A40C6 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		7FF075301B68A366006A40C6 = {
 			isa = PBXGroup;
 			children = (
 				7FF0753B1B68A366006A40C6 /* ExpandableTableviewCell */,
-				7FF075581B68A366006A40C6 /* ExpandableTableviewCellTests */,
 				7FF0753A1B68A366006A40C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				7FF075391B68A366006A40C6 /* ExpandableTableviewCell.app */,
-				7FF075551B68A366006A40C6 /* ExpandableTableviewCellTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,12 +83,8 @@
 				7FF075661B68A37D006A40C6 /* AppDelegate.m */,
 				7FF075671B68A37D006A40C6 /* ViewController.h */,
 				7FF075681B68A37D006A40C6 /* ViewController.m */,
-				7FF075691B68A37D006A40C6 /* Plus.png */,
-				7FF0756A1B68A37D006A40C6 /* Minus.png */,
-				7FF0756B1B68A37D006A40C6 /* Main.storyboard */,
-				7FF0754C1B68A366006A40C6 /* Images.xcassets */,
-				7FF0754E1B68A366006A40C6 /* LaunchScreen.xib */,
-				7FF075431B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodeld */,
+				7FF04A181C33FB520076A095 /* Images */,
+				7FF04A191C33FB7F0076A095 /* Storyboard */,
 				7FF0753C1B68A366006A40C6 /* Supporting Files */,
 			);
 			path = ExpandableTableviewCell;
@@ -105,25 +93,10 @@
 		7FF0753C1B68A366006A40C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FF0754C1B68A366006A40C6 /* Images.xcassets */,
+				7FF0754E1B68A366006A40C6 /* LaunchScreen.xib */,
 				7FF0753D1B68A366006A40C6 /* Info.plist */,
 				7FF0753E1B68A366006A40C6 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7FF075581B68A366006A40C6 /* ExpandableTableviewCellTests */ = {
-			isa = PBXGroup;
-			children = (
-				7FF0755B1B68A366006A40C6 /* ExpandableTableviewCellTests.m */,
-				7FF075591B68A366006A40C6 /* Supporting Files */,
-			);
-			path = ExpandableTableviewCellTests;
-			sourceTree = "<group>";
-		};
-		7FF075591B68A366006A40C6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7FF0755A1B68A366006A40C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,24 +121,6 @@
 			productReference = 7FF075391B68A366006A40C6 /* ExpandableTableviewCell.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7FF075541B68A366006A40C6 /* ExpandableTableviewCellTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF075621B68A366006A40C6 /* Build configuration list for PBXNativeTarget "ExpandableTableviewCellTests" */;
-			buildPhases = (
-				7FF075511B68A366006A40C6 /* Sources */,
-				7FF075521B68A366006A40C6 /* Frameworks */,
-				7FF075531B68A366006A40C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7FF075571B68A366006A40C6 /* PBXTargetDependency */,
-			);
-			name = ExpandableTableviewCellTests;
-			productName = ExpandableTableviewCellTests;
-			productReference = 7FF075551B68A366006A40C6 /* ExpandableTableviewCellTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +132,6 @@
 				TargetAttributes = {
 					7FF075381B68A366006A40C6 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					7FF075541B68A366006A40C6 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 7FF075381B68A366006A40C6;
 					};
 				};
 			};
@@ -198,7 +149,6 @@
 			projectRoot = "";
 			targets = (
 				7FF075381B68A366006A40C6 /* ExpandableTableviewCell */,
-				7FF075541B68A366006A40C6 /* ExpandableTableviewCellTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +166,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FF075531B68A366006A40C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -230,30 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF075451B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodeld in Sources */,
 				7FF0753F1B68A366006A40C6 /* main.m in Sources */,
 				7FF0756D1B68A37D006A40C6 /* ViewController.m in Sources */,
 				7FF0756C1B68A37D006A40C6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FF075511B68A366006A40C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FF0755C1B68A366006A40C6 /* ExpandableTableviewCellTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7FF075571B68A366006A40C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7FF075381B68A366006A40C6 /* ExpandableTableviewCell */;
-			targetProxy = 7FF075561B68A366006A40C6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7FF0754E1B68A366006A40C6 /* LaunchScreen.xib */ = {
@@ -367,40 +293,6 @@
 			};
 			name = Release;
 		};
-		7FF075631B68A366006A40C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ExpandableTableviewCellTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandableTableviewCell.app/ExpandableTableviewCell";
-			};
-			name = Debug;
-		};
-		7FF075641B68A366006A40C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ExpandableTableviewCellTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpandableTableviewCell.app/ExpandableTableviewCell";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,29 +312,9 @@
 				7FF075611B68A366006A40C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		7FF075621B68A366006A40C6 /* Build configuration list for PBXNativeTarget "ExpandableTableviewCellTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7FF075631B68A366006A40C6 /* Debug */,
-				7FF075641B68A366006A40C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7FF075431B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7FF075441B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodel */,
-			);
-			currentVersion = 7FF075441B68A366006A40C6 /* ExpandableTableviewCell.xcdatamodel */;
-			path = ExpandableTableviewCell.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7FF075311B68A366006A40C6 /* Project object */;
 }
