@@ -29,7 +29,7 @@ UITableViewDelegate>
 {
     [super viewDidLoad]; 
     
-    cell0SubMenuItemsArray = @[@"First Static Menu Item", @"Second Static Menu Item", @"Third Static Menu Item"];
+    cell0SubMenuItemsArray = @[@"First Static Menu Item", @"Second Static Menu Item", @"Third Static Menu Item", @"Fourth Static Menu Item"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -76,13 +76,24 @@ UITableViewDelegate>
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryNone;
     
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
+    {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)])
+    {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
     if (indexPath.section == 0)
     {
         if (indexPath.row == 0)
         {
             cell.textLabel.text = @"Expandable Cell";
+            cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
             
-            UIImageView *accessoryImageView = [[UIImageView alloc] initWithFrame:CGRectMake(cell.frame.size.width - 30, cell.frame.size.height / 2 - 15, 30, 30)];
+            UIImageView *accessoryImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
             
             if (isSection0Cell0Expanded) // Set accessory view according to cell state - EXPANDED / NOT EXPANDED
             {
@@ -95,17 +106,20 @@ UITableViewDelegate>
                 cell.detailTextLabel.text = @"Status : Not Expanded";
             }
             
-            [cell addSubview:accessoryImageView];
+            cell.accessoryView = accessoryImageView;
         }
         else
         {
             if (isSection0Cell0Expanded && [cell0SubMenuItemsArray count] >= indexPath.row) // Check Expanded status and do the necessary changes
             {
                 cell.textLabel.text = [NSString stringWithFormat:@"%@", [cell0SubMenuItemsArray objectAtIndex:indexPath.row - 1]];
+                cell.textLabel.font = [UIFont systemFontOfSize:13];
+                cell.backgroundColor = [UIColor lightGrayColor];
             }
             else
             {
                 cell.textLabel.text = @"Static Cell";
+                cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
             }
         }
     }
@@ -132,6 +146,7 @@ UITableViewDelegate>
                               [NSIndexPath indexPathForRow:1 inSection:0],
                               [NSIndexPath indexPathForRow:2 inSection:0],
                               [NSIndexPath indexPathForRow:3 inSection:0],
+                              [NSIndexPath indexPathForRow:4 inSection:0],
                               nil];
             
             [CATransaction begin];
@@ -153,6 +168,7 @@ UITableViewDelegate>
                               [NSIndexPath indexPathForRow:1 inSection:0],
                               [NSIndexPath indexPathForRow:2 inSection:0],
                               [NSIndexPath indexPathForRow:3 inSection:0],
+                              [NSIndexPath indexPathForRow:4 inSection:0],
                               nil];
             
             [CATransaction begin];
